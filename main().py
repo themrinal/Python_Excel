@@ -1,11 +1,18 @@
 import openpyxl
 
-wrk=openpyxl.load_workbook("wrksht.xlsx") #this method will load your worksheet into a var
-print(type(wrk)) #basically it will print a class that is assigned with wrk var
+# Load the Excel workbook into the 'wrk' variable
+wrk = openpyxl.load_workbook("wrksht.xlsx")  
 
-sheets=wrk.sheetnames
-print(sheets) # this will return how many sheets in that file. (it will print lists)
+# Print the type of the loaded workbook to confirm successful loading
+# This will output the class associated with the 'wrk' variable
+print(type(wrk))  
 
-#First we have to see which sheet are active.
-print(wrk.active.title) #sheet1
+# Retrieve and print a list of all worksheet names in the workbook
+sheets = wrk.sheetnames
+print(sheets)  # This will return a list of all the sheet names in the Excel file
+
+# Print the name of the active sheet in the workbook
+# The active sheet is the one that is currently selected by default when the file opens
+print(wrk.active.title)  # Example: 'Sheet1'
+
 
